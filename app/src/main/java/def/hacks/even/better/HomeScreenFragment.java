@@ -11,29 +11,26 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Created by William Zulueta on 4/13/19.
+ * Created by William Zulueta on 4/14/19.
  */
-public class LoginFragment extends Fragment {
-    public static final String TAG = LoginFragment.class.getSimpleName();
-    private Button logInButton;
-    private Button signUpButton;
+public class HomeScreenFragment extends Fragment {
+    public static final String TAG = HomeScreenFragment.class.getSimpleName();
+
+    private Button loanButton;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_login, null);
-
-        logInButton = view.findViewById(R.id.logInButton);
-        logInButton.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.home_screen, null);
+        loanButton = view.findViewById(R.id.loanButton);
+        loanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(R.id.frameLayout, new HomeScreenFragment());
-                transaction.addToBackStack(HomeScreenFragment.TAG);
+                transaction.add(R.id.frameLayout, new OffersFragment());
+                transaction.addToBackStack(OffersFragment.TAG);
                 transaction.commit();
             }
         });
-        signUpButton = view.findViewById(R.id.signUpButton);
         return view;
     }
-
 }

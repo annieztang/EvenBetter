@@ -17,10 +17,10 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import def.hacks.even.api.EvenRequest;
-import def.hacks.even.api.LeadResponse;
-import def.hacks.even.api.RateTableResponse;
-import def.hacks.even.better.volley.EvenBetterApi;
+import def.hacks.even.coreapi.EvenRequest;
+import def.hacks.even.coreapi.LeadResponse;
+import def.hacks.even.coreapi.RateTableResponse;
+import def.hacks.even.coreapi.volley.EvenBetterApi;
 
 /**
  * Created by William Zulueta on 4/13/19.

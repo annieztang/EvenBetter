@@ -6,7 +6,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import def.hacks.even.api.LoanOffer;
+import def.hacks.even.coreapi.LoanOffer;
+
 
 /**
  * Created by William Zulueta on 4/14/19.

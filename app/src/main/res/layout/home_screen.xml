@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#f4fbff"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#f4fbff">
 
     <TableRow
         android:id="@+id/hr2"
@@ -20,6 +19,7 @@
         android:layout_width="110dp"
         android:layout_height="65dp"
         android:layout_marginTop="8dp"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,26 +29,26 @@
         android:id="@+id/button"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/circle"
         android:fontFamily="@font/khula_bold"
         android:text="J"
         android:textColor="@android:color/white"
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="335dp"
-        tools:layout_editor_absoluteY="13dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="15dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        tools:layout_editor_absoluteX="335dp"
+        tools:layout_editor_absoluteY="13dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
+        android:padding="16dp"
         android:weightSum="4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -64,8 +64,8 @@
             app:srcCompat="@drawable/dollar" />
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:id="@+id/loanButton"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:background="@drawable/roundshapebtn"
@@ -74,7 +74,6 @@
             android:text="Find a Loan"
             android:textColor="@android:color/white"
             android:textSize="42sp"
-            app:layout_constraintBottom_toTopOf="@+id/button5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hr2" />
@@ -82,11 +81,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="50dp"
         android:orientation="horizontal"
+        android:padding="16dp"
         android:weightSum="4"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -103,23 +103,27 @@
             app:srcCompat="@drawable/card" />
 
         <Button
-            android:id="@+id/button5"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
             android:background="@drawable/roundshapebtn"
             android:fontFamily="@font/titillium_web_bold"
             android:gravity="center"
             android:text="Credit History"
             android:textColor="@android:color/white"
-            android:textSize="42sp" />
+            android:textSize="42sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hr2" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
+        android:padding="16dp"
         android:weightSum="4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -135,15 +139,18 @@
             app:srcCompat="@drawable/qmark" />
 
         <Button
-            android:id="@+id/button6"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
             android:background="@drawable/roundshapebtn"
             android:fontFamily="@font/titillium_web_bold"
             android:gravity="center"
             android:text="About"
             android:textColor="@android:color/white"
-            android:textSize="42sp" />
+            android:textSize="42sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hr2" />
 
     </LinearLayout>
 
