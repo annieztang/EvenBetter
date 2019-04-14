@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import def.hacks.even.api.EvenRequest;
 import def.hacks.even.api.LeadResponse;
@@ -25,7 +26,7 @@ import def.hacks.even.better.volley.EvenBetterApi;
  * Created by William Zulueta on 4/13/19.
  */
 public class OffersFragment extends Fragment {
-    public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = OffersFragment.class.getSimpleName();
     private static final Gson gson = new Gson();
 
     private ListView listView;
@@ -115,12 +116,12 @@ public class OffersFragment extends Fragment {
 
         @Override
         public int getItemViewType(int i) {
-            return 0;
+            return 1;
         }
 
         @Override
         public int getViewTypeCount() {
-            return 0;
+            return 1;
         }
 
         @Override
@@ -128,8 +129,6 @@ public class OffersFragment extends Fragment {
             return response.loanOffers.length == 0;
         }
     }
-
-
 
     private EvenBetterApi.ResponseManager leadsResponseManager = new EvenBetterApi.ResponseManager() {
         @Override
@@ -156,6 +155,7 @@ public class OffersFragment extends Fragment {
             Log.i(TAG, "rateTables response : " + response);
             OffersFragment.this.rateTableResponse = gson.fromJson(response, RateTableResponse.class);
             OffersFragment.this.initList(rateTableResponse);
+            Toast.makeText(getContext(), "Got " + rateTableResponse.loanOffers.length + " responses!", Toast.LENGTH_SHORT).show();
             // todo make offer object
         }
     };

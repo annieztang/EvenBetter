@@ -16,8 +16,13 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.frameLayout, new LoginFragment());
+        transaction.add(R.id.frameLayout, new LoginFragment(), LoginFragment.TAG);
         transaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        getSupportFragmentManager().popBackStack();
     }
 
 }
