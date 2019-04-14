@@ -65,7 +65,7 @@ public class EvenRequest {
         " \"financialInformation\": {\n" +
         "   \"employmentStatus\": \"employed\",\n" +
         "   \"employmentPayFrequency\": \"weekly\",\n" +
-        "   \"annualIncome\": 120000,\n" +
+        "   \"annualIncome\": 70000,\n" +
         "   \"monthlyNetIncome\": 10000,\n" +
         "   \"bankName\": \"Santander\",\n" +
         "   \"bankRoutingNumber\": \"231372691\",\n" +
