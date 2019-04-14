@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import def.hacks.even.coreapi.EvenRequest;
@@ -32,22 +33,27 @@ public class OffersFragment extends Fragment {
     private ListView listView;
     private ListAdapter listAdapter;
 
+    private ProgressBar progressBar;
+
     private RateTableResponse rateTableResponse;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_offers, null);
+        View view = inflater.inflate(R.layout.new_fragment_offers, null);
 
         EvenRequest request = EvenRequest.temp(gson);
 
         EvenBetterApi.postLeads(getContext(), gson, request, leadsResponseManager);
 
         listView = view.findViewById(R.id.offersListView);
+        progressBar = view.findViewById(R.id.progress_loader);
+        progressBar.setVisibility(View.VISIBLE);
 
         return view;
     }
 
     public void initList(RateTableResponse response) {
+        progressBar.setVisibility(View.GONE);
         rateTableResponse = response;
         listAdapter = new ListAdapter(getContext(), rateTableResponse);
         listView.setAdapter(listAdapter);

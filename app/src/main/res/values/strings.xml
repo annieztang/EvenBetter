@@ -14,4 +14,6 @@
     <string name="vacation">Vacation</string>
     <string name="other">Other</string>
     <string name="green">Green</string>
+    <string name="find_loan">Find a Loan</string>
+    <string name="credit_history">Credit History</string>
 </resources>
