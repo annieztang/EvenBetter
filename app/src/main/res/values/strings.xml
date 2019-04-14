@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">EvenBetter</string>
+    <string name="credit_consolidation">Debit/Credit Card Consolidation</string>
+    <string name="home_improvement">Home Improvement</string>
+    <string name="large_purchase">Large Purchase</string>
+    <string name="wedding">Wedding</string>
+    <string name="auto">Auto</string>
+    <string name="household_expenses">Household Expenses</string>
+    <string name="health">Health</string>
+    <string name="student_loan">Student Loan</string>
+    <string name="moving">Moving</string>
+    <string name="boat">Boat</string>
+    <string name="taxes">Taxes</string>
+    <string name="vacation">Vacation</string>
+    <string name="other">Other</string>
+    <string name="green">Green</string>
 </resources>

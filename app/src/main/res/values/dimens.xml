@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="type_width">150dp</dimen>
+    <dimen name="type_height">60dp</dimen>
+    <dimen name="header_height">80dp</dimen>
+</resources>
