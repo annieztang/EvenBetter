@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +41,10 @@ public class ChooseLoanFragment extends Fragment implements View.OnClickListener
 
             // move to next fragment...
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.add(R.id.frameLayout, new WithdrawAmountFragment());
+            Fragment fragment = new WithdrawAmountFragment();
+            fragment.setEnterTransition(new Slide(Gravity.RIGHT));
+            fragment.setExitTransition(new Slide(Gravity.LEFT));
+            transaction.add(R.id.frameLayout, fragment);
             transaction.addToBackStack(WithdrawAmountFragment.TAG);
             transaction.commit();
         }
