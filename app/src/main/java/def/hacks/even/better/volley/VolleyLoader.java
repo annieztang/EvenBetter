@@ -1,11 +1,10 @@
-package def.hacks.even.better;
-
-import android.content.Context;
+package def.hacks.even.better.volley;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+
+import android.content.Context;
 
 public class VolleyLoader {
     private static VolleyLoader instance;

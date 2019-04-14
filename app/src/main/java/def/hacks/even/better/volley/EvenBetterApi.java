@@ -1,4 +1,4 @@
-package def.hacks.even.better;
+package def.hacks.even.better.volley;
 
 import com.google.gson.Gson;
 
@@ -16,6 +16,8 @@ import def.hacks.even.api.EvenRequest;
 import def.hacks.even.api.LeadResponse;
 
 public class EvenBetterApi {
+    public static final String TAG = EvenBetterApi.class.getSimpleName();
+
     private static final String URL_LEAD = "https://api.evenfinancial.com/leads/rateTables";
     private static final String AUTH = "Bearer e7675dd3-ff3b-434b-95aa-70251cc3784b_88140dd4-f13e-4ce3-8322-6eaf2ee9a2d2";
     private static final String URL_RATE_TABLES = "https://api.evenfinancial.com/originator/rateTables/{UUID}";
@@ -48,6 +50,9 @@ public class EvenBetterApi {
 
     public static void getRateTables(Context context, LeadResponse leadResponse, ResponseManager responseManager) {
         String uuid = leadResponse.uuid;
+
+        Log.d(TAG, "Making request to url : " + getRatesUrl(uuid));
+
         StringRequest stringRequest = new StringRequest(Request.Method.GET, getRatesUrl(uuid), responseManager, responseManager) {
             @Override
             public Map<String, String> getHeaders() {
