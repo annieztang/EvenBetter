@@ -7,6 +7,6 @@ public class CreditCardInformation {
         balance_transfer,earning_rewards, improve_credit, travel_incentives, low_interest, new_to_credit,
         student
     }
-    public CardBenefits cardBenefits;
+    public CardBenefits[] cardBenefits;
 
 }
