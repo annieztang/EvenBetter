@@ -13,6 +13,7 @@ public class PersonalInformation {
     public String zipcode;
     public int monthsAtAddress;
     public String driversLicenseNumber;
+    public String driversLicenseState;
     public String ipAddress;
     public boolean activeMilitary;
     public boolean militaryVeteran;
