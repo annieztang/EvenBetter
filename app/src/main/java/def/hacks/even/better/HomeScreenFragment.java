@@ -17,17 +17,28 @@ public class HomeScreenFragment extends Fragment {
     public static final String TAG = HomeScreenFragment.class.getSimpleName();
 
     private Button loanButton;
+    private Button creditHistoryButton;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_screen, null);
         loanButton = view.findViewById(R.id.loanButton);
+        creditHistoryButton = view.findViewById(R.id.creditHistoryButton);
         loanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.add(R.id.frameLayout, new ChooseLoanFragment());
                 transaction.addToBackStack(ChooseLoanFragment.TAG);
+                transaction.commit();
+            }
+        });
+        creditHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.add(R.id.frameLayout, new CreditHistoryFragment());
+                transaction.addToBackStack(CreditHistoryFragment.TAG);
                 transaction.commit();
             }
         });
