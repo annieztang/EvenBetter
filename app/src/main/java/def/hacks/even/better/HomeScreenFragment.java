@@ -26,8 +26,8 @@ public class HomeScreenFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(R.id.frameLayout, new OffersFragment());
-                transaction.addToBackStack(OffersFragment.TAG);
+                transaction.add(R.id.frameLayout, new ChooseLoanFragment());
+                transaction.addToBackStack(ChooseLoanFragment.TAG);
                 transaction.commit();
             }
         });
