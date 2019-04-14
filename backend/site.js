@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 */
 let uuid;
 let getUrl;
-app.use('/', router);
+
 app.listen(process.env.port || 3000);
 
 function postInfo() {
@@ -75,7 +75,10 @@ function postInfo() {
           }
       }
   ));
-})};
+}.then(() =>  {
+  app.use('/', router);
+}
+  ))};
 
 postInfo();
 function waitForElement(){
