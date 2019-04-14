@@ -67,12 +67,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="157dp"
+        android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:layout_marginStart="127dp"
-        android:layout_marginEnd="127dp"
         android:layout_marginBottom="40dp"
         android:text="© EvenBetter 2019"
+        android:gravity="center"
         android:textColor="@android:color/darker_gray"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,12 +81,13 @@
 
     <TableRow
         android:id="@+id/hr1"
-        android:layout_width="340dp"
+        android:layout_width="300dp"
         android:layout_height="13dp"
         android:layout_marginStart="35dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="36dp"
         android:background="@color/lightBlue"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
