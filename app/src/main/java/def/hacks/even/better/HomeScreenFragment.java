@@ -1,5 +1,6 @@
 package def.hacks.even.better;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -36,10 +37,8 @@ public class HomeScreenFragment extends Fragment {
         creditHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.add(R.id.frameLayout, new CreditHistoryFragment());
-                transaction.addToBackStack(CreditHistoryFragment.TAG);
-                transaction.commit();
+                Intent intent = new Intent(getContext(), CreditHistoryActivity.class);
+                startActivity(intent);
             }
         });
         return view;
