@@ -10,4 +10,4 @@ let firstUser = {
 userData.push(firstUser);
 userData.push({"fico":750,"drive_id":"111222333","newFico":0})
 userData.push({"fico":750,"drive_id":"111222333","newFico":0})
-console.log(userData);userData.push({"fico":750,"drive_id":"111222333","newFico":0})
+console.log(userData);userData.push({"fico":750,"drive_id":"111222333","newFico":0})userData.push({"fico":750,"drive_id":"111222333","newFico":0})userData.push({"fico":750,"drive_id":"111222333","newFico":0})userData.push({"fico":750,"drive_id":"111222333","newFico":0})

@@ -5,16 +5,13 @@ const router = express.Router();
 const fs = require('fs');
 const Prase = require('parse/node');
 const _ = require('lodash');
-
 const app = express();
 const url = 'https://api.evenfinancial.com/leads/rateTables/';
-const dir = './public';
+var net = require('net');
+
 let pathTo = './data.json';
 var content = require(pathTo);
 
-if (!fs.existsSync(dir)) {
-	fs.mkdirSync(dir);
-}
 router.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/conway.html'));
   //__dirname : It will resolve to your project folder.
@@ -36,8 +33,15 @@ app.get('/', (req, res) => {
 */
 let uuid;
 let getUrl;
+var server = net.createServer();
 
-app.listen(process.env.port || 3000);
+server.once('error', function(err) {
+  if (err.code === 'EADDRINUSE') {
+    // port is currently in use
+  }
+ else 
+  app.listen(process.env.port || 3000);
+});
 
 function postInfo() {
   return new Promise((resolve, reject) => {
@@ -50,11 +54,17 @@ function postInfo() {
         json:content },
       function (error, response, body) {
           if (!error && response.statusCode == 200) {
-
+              let bankMonths = content['financialInformation']['monthsAtBank'];
+              let loanAmount = content['loanInformation']['loanAmount'];
+              let mortgageBalance = content['mortgageInformation']['mortgageBalance'];
+              let employedMonths = content['employmentInformation']['monthsEmployed'];
+              let income = content['financialInformation']['annualIncome'];
+              let value = content['mortgageInformation']['propertyValue'];
+              let fico = content['creditInformation']['providedNumericCreditScore'];
               let userData = {
-                fico : content['creditInformation']['providedNumericCreditScore'],
+                fico: fico,
                 drive_id : content['personalInformation']['driversLicenseNumber'],
-                newFico : 0
+                newFico : calcuateCredit(bankMonths, employedMonths, fico, mortgageBalance, loanAmount, income, value)
               };
               let filename = 'cache.js';
               fs.appendFile(filename, `userData.push(${JSON.stringify(userData)})`,  (error) => {
@@ -75,10 +85,10 @@ function postInfo() {
           }
       }
   ));
-}.then(() =>  {
+}).then(() =>  {
   app.use('/', router);
 }
-  ))};
+  )};
 
 postInfo();
 function waitForElement(){
@@ -122,6 +132,16 @@ function getInfo() {
   })
 };
 
+ // Calculate new FICO score
+ function calcuateCredit(bankMonths,employedMonths,fico,mortgageBalance, loanAmount, income, value) {
+  let capBank = bankMonths / 40;
+  let creditUtil = (mortgageBalance + loanAmount) / (income + .5 *(value - mortgageBalance))
+  let creditCap = Math.min(creditUtil * 2000, .3 * 850);
+  employedMonths = Math.min(employedMonths * 10, .15 * 850);
+  fico = Math.min(fico*.1 + 20, 85);
+  bankMonths = Math.min(.35 * 850 * capBank);
+  return Math.max(750, creditCap + fico + bankMonths + employedMonths + 150);
+ }
  // Helper function for pruning JSON.
  function pruneEmpty(obj) {
                   return function prune(current) {
