@@ -6,6 +6,6 @@ package def.hacks.even.api;
 public class RateTableResponse {
     public String uuid;
     public String leadUuid;
-    public int loadAmount;
+    public int loanAmount;
     public LoanOffer[] loanOffers;
 }
