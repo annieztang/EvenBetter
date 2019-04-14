@@ -12,7 +12,7 @@
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></def.hacks.even.better.HeaderView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -43,7 +43,7 @@
             android:background="@drawable/roundshapebtn"
             android:fontFamily="@font/titillium_web_bold"
             android:gravity="center"
-            android:text="Find a Loan"
+            android:text="@string/find_loan"
             android:textColor="@android:color/white"
             android:textSize="42sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
             android:background="@drawable/roundshapebtn"
             android:fontFamily="@font/titillium_web_bold"
             android:gravity="center"
-            android:text="Credit History"
+            android:text="@string/credit_history"
             android:textColor="@android:color/white"
             android:textSize="42sp"
             app:layout_constraintEnd_toEndOf="parent"
