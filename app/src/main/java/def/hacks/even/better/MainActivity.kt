@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         evenRequest.loanInformation.purpose = loanType
     }
 
+    fun setWithdrawAmount(amount: Int){
+        evenRequest.loanInformation.loanAmount = amount.toLong()
+    }
+
     override fun onBackPressed() {
         supportFragmentManager.popBackStack()
     }
