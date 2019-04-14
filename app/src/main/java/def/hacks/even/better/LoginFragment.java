@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.Button;
  * Created by William Zulueta on 4/13/19.
  */
 public class LoginFragment extends Fragment {
+    public static final String TAG = LoginFragment.class.getSimpleName();
     private Button logInButton;
     private Button signUpButton;
 
@@ -21,6 +23,15 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, null);
 
         logInButton = view.findViewById(R.id.logInButton);
+        logInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.add(R.id.frameLayout, new OffersFragment());
+                transaction.addToBackStack(OffersFragment.TAG);
+                transaction.commit();
+            }
+        });
         signUpButton = view.findViewById(R.id.signUpButton);
         return view;
     }
